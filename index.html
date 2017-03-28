@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Reproductor</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <audio id="miAudio" src =""></audio>
+  <audio id="miAudio">
+    <source src="cancion.mp3" type="audio/mpeg">
+  </audio>
   <div id="duracion">
        <span></span>
        <div></div>
    </div>
-  <div style="border-radius: 10px">
-    <button name="play" id="play" onclick=""> Play </button>
-    <button name="pause" id= "pause" onclick=""> Pause </button>
-    <button name="stop" id= "stop" onclick=""> Stop </button>
-    <button name="next" id="next" onclick=""> Next </button>
-    <button name="back" id="back" onclick=""> Back </button>
-    <button name="subir" id="subir" onclick=""> + </button>
-    <button name="bajar" id="bajar" onclick=""> - </button>
+  <div>
+    <button name="play" id="play" onclick="play()"><i class="fa fa-play"></i> Play </button>
+    <button name="pause" id= "pause" onclick="pause()"><i class="fa fa-pause"></i> Pause </button>
+    <button name="stop" id= "stop" onclick="stop()"><i class="fa fa-stop"></i> Stop </button>
+    <button name="next" id="next" onclick="forward()"> Forward <i class="fa fa-fast-forward"></i></button>
+    <button name="back" id="back" onclick="back()"> Back <i class="fa fa-fast-backward"></i></button>
+    <button name="subir" id="subir" onclick="subirVolumen()"> Volume <i class="fa fa-plus "></i></button>
+    <button name="bajar" id="bajar" onclick="bajarVolumen()"> Volume <i class="fa fa-minus"></i></button>
   </div>
+  <progress value="0" max="" id="progreso">0%</progress>
 <script src="assets/js/reproductor.js"></script>
 </body>
 </html>
